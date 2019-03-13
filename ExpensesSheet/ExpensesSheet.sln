@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.Core.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.Infrastructure", "Expenses.Infrastructure\Expenses.Infrastructure.csproj", "{4642C368-54B7-478C-A350-BD05A7A56121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Expenses.API", "Expenses.API\Expenses.API.csproj", "{16793F40-45A2-487C-AA9A-7170DF34E8B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{4642C368-54B7-478C-A350-BD05A7A56121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4642C368-54B7-478C-A350-BD05A7A56121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4642C368-54B7-478C-A350-BD05A7A56121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16793F40-45A2-487C-AA9A-7170DF34E8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16793F40-45A2-487C-AA9A-7170DF34E8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16793F40-45A2-487C-AA9A-7170DF34E8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16793F40-45A2-487C-AA9A-7170DF34E8B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,5 +49,6 @@ Global
 		{A52A312E-4480-4C14-AF3F-B1FE5B8E6591} = {5801070A-595D-42C2-B387-CD1AC1A3FF77}
 		{A20008D6-E0F3-4484-867C-51D1D2B3CD24} = {5801070A-595D-42C2-B387-CD1AC1A3FF77}
 		{4642C368-54B7-478C-A350-BD05A7A56121} = {5D5C09DB-8AA9-4115-B5A5-D4895F84C426}
+		{16793F40-45A2-487C-AA9A-7170DF34E8B4} = {649C4380-B6A7-4725-A244-80A1D8B07B37}
 	EndGlobalSection
 EndGlobal
