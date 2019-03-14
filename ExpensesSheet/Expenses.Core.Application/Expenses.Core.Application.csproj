@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\ApplicationManager.cs" />
+    <Compile Include="Manager\IApplicationManager.cs" />
     <Compile Include="Module\ApplicationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
