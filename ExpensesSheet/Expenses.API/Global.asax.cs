@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Expenses.Core.Application.Module;
+using Expenses.Infrastructure.DependencyInjection;
+using Expenses.Infrastructure.Module;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +21,10 @@ namespace Expenses.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            CompositionRoot.Init();
+            CompositionRoot.AddModule(new InfrastructureModule());
+            CompositionRoot.AddModule(new ApplicationModule());
         }
     }
 }
