@@ -64,19 +64,23 @@
     <Compile Include="Manager\IApplicationManager.cs" />
     <Compile Include="Module\ApplicationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EntryService.cs" />
+    <Compile Include="Services\Interface\IEntryService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Expenses.Core.Domain\Expenses.Core.Domain.csproj">
       <Project>{a52a312e-4480-4c14-af3f-b1fe5b8e6591}</Project>
       <Name>Expenses.Core.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Expenses.Infrastructure\Expenses.Infrastructure.csproj">
+      <Project>{4642c368-54b7-478c-a350-bd05a7a56121}</Project>
+      <Name>Expenses.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

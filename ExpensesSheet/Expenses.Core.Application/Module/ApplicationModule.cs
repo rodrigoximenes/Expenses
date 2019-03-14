@@ -1,4 +1,5 @@
-﻿using Ninject.Modules;
+﻿using Expenses.Core.Application.Manager;
+using Ninject.Modules;
 
 namespace Expenses.Core.Application.Module
 {
@@ -6,7 +7,7 @@ namespace Expenses.Core.Application.Module
     {
         public override void Load()
         {
-            
+            KernelInstance.Bind<IApplicationManager>().To<ApplicationManager>();
         }
     }
 }

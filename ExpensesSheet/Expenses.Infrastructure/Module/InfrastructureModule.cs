@@ -1,4 +1,6 @@
-﻿using Expenses.Infrastructure.Context;
+﻿using Expenses.Core.Domain.Interface;
+using Expenses.Infrastructure.Context;
+using Expenses.Infrastructure.Repository;
 using Ninject.Modules;
 
 namespace Expenses.Infrastructure.Module
@@ -10,6 +12,9 @@ namespace Expenses.Infrastructure.Module
             //Contexto
             Bind<ExpensesContext>().ToSelf().InTransientScope();
 
+            //Repositorio
+            this.Bind<IEntryRepository>().To<EntryRepository>();
+            this.Bind(typeof(IBaseRepository<>)).To(typeof(BaseRepository<>));
         }
     }
 }
