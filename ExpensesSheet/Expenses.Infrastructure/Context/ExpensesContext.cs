@@ -6,5 +6,10 @@ namespace Expenses.Infrastructure.Context
     public class ExpensesContext : DbContext
     {
         public DbSet<Entry> Entries { get; set; }
+
+        public ExpensesContext() : base("name = ExpensesDb")
+        {
+
+        }
     }
 }
