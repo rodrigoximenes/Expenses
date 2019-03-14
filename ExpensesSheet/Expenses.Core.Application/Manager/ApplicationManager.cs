@@ -1,4 +1,5 @@
-﻿using Expenses.Core.Application.Services.Interface;
+﻿using System;
+using Expenses.Core.Application.Services.Interface;
 using Expenses.Infrastructure.DependencyInjection;
 
 namespace Expenses.Core.Application.Manager
@@ -8,7 +9,6 @@ namespace Expenses.Core.Application.Manager
     /// </summary>
     public class ApplicationManager : IApplicationManager
     {
-        public IEntryService MovimentacaoService => CompositionRoot.Resolve<IEntryService>();
-
+        public IEntryService EntryService => CompositionRoot.Resolve<IEntryService>();
     }
 }
