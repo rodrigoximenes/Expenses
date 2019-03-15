@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EntryService } from '../entry.service';
+import { EntryElement } from '../Interfaces/EntryElement';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-entries',
@@ -8,11 +10,15 @@ import { EntryService } from '../entry.service';
 })
 export class EntriesComponent implements OnInit {
 
+  displayedColumns: string[] = ['Description','IsExpense','Value']
+  dataSource;
+
   constructor(private service: EntryService) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       console.log('Result -', data);
+      this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]);
     })
   }
 
