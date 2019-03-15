@@ -4,9 +4,11 @@ using Expenses.Infrastructure.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Expenses.API.Controllers
 {
+    [EnableCors("http://localhost:4200","*","*")]
     public class EntriesController : ApiController
     {
         private readonly IApplicationManager _applicationManager = CompositionRoot.Resolve<IApplicationManager>();

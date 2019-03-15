@@ -11,6 +11,10 @@ import { EntryService } from './entry.service';
 import { AppRouterModule } from './app-router-module';
 import { HttpClientModule } from '@angular/common/http';
 
+//Material Design
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +25,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+
+    //material design
+    BrowserAnimationsModule,
+    MatButtonModule,
+
     AppRouterModule
 
   ],
