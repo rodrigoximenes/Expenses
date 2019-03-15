@@ -8,7 +8,7 @@ using System.Web.Http.Cors;
 
 namespace Expenses.API.Controllers
 {
-    [EnableCors("http://localhost:4200","*","*")]
+    [EnableCors("http://localhost:4200", "*", "*")]
     public class EntriesController : ApiController
     {
         private readonly IApplicationManager _applicationManager = CompositionRoot.Resolve<IApplicationManager>();
@@ -28,5 +28,16 @@ namespace Expenses.API.Controllers
             }
 
         }
+
+        [HttpPost]
+        public IHttpActionResult PostEntry([FromBody]Entry entry)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            if (_applicationManager.EntryService.Add(entry)) return Ok("Entry was created");
+
+            return BadRequest();
+        }
+
     }
 }

@@ -23,5 +23,18 @@ namespace Expenses.Core.Application.Services
         {
             return _entryRepository.FindAll();
         }
+
+        public bool Add(Entry entry)
+        {
+            try
+            {
+                _entryRepository.Add(entry);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }
