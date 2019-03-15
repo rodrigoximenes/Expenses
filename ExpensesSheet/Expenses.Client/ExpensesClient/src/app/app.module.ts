@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 
 //Services
 import { EntryService } from './entry.service';
+import { AppRouterModule } from './app-router-module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { EntryService } from './entry.service';
     FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
+    AppRouterModule
+
   ],
   providers: [EntryService],
   bootstrap: [AppComponent]
