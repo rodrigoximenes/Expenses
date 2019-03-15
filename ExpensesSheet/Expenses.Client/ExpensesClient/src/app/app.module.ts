@@ -15,13 +15,18 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
+import { NewEntryComponent } from './new-entry/new-entry.component';
+
+//Forms
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntriesComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NewEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,9 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatButtonModule,
     MatTableModule,
+
+    //Forms
+    
 
     AppRouterModule
 
