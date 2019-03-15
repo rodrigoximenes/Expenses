@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 //Services
 import { EntryService } from './entry.service';
 import { AppRouterModule } from './app-router-module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { AppRouterModule } from './app-router-module';
   ],
   imports: [
     BrowserModule,
-
+    HttpClientModule,
     AppRouterModule
 
   ],

@@ -11,6 +11,7 @@ namespace Expenses.API.Controllers
     {
         private readonly IApplicationManager _applicationManager = CompositionRoot.Resolve<IApplicationManager>();
 
+        [HttpGet]
         public IHttpActionResult GetEntries()
         {
             try
@@ -23,6 +24,7 @@ namespace Expenses.API.Controllers
             {
                 return BadRequest(ex.Message);
             }
+
         }
     }
 }
