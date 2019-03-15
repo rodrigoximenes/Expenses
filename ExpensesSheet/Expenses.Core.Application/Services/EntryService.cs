@@ -1,4 +1,9 @@
-﻿using Expenses.Core.Application.Services.Interface;
+﻿using System;
+using System.Collections.Generic;
+using Expenses.Core.Application.Services.Interface;
+using Expenses.Core.Domain.Model;
+using Expenses.Core.Domain.Interface;
+using Expenses.Infrastructure.DependencyInjection;
 
 namespace Expenses.Core.Application.Services
 {
@@ -7,6 +12,16 @@ namespace Expenses.Core.Application.Services
     /// </summary>
     public class EntryService : IEntryService
     {
+        private readonly IEntryRepository _entryRepository = CompositionRoot.Resolve<IEntryRepository>();
 
+        public Entry FindById(int id)
+        {
+            return _entryRepository.Find(id);
+        }
+
+        public IList<Entry> All()
+        {
+            return _entryRepository.FindAll();
+        }
     }
 }

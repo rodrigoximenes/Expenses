@@ -281,6 +281,10 @@
       <Project>{A20008D6-E0F3-4484-867C-51D1D2B3CD24}</Project>
       <Name>Expenses.Core.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Expenses.Core.Domain\Expenses.Core.Domain.csproj">
+      <Project>{A52A312E-4480-4C14-AF3F-B1FE5B8E6591}</Project>
+      <Name>Expenses.Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Expenses.Infrastructure\Expenses.Infrastructure.csproj">
       <Project>{4642C368-54B7-478C-A350-BD05A7A56121}</Project>
       <Name>Expenses.Infrastructure</Name>
