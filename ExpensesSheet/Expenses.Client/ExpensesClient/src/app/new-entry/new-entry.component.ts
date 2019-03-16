@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Type } from '../Interfaces/Type';
+
 
 @Component({
   selector: 'app-new-entry',
@@ -7,6 +9,11 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./new-entry.component.css']
 })
 export class NewEntryComponent {
+
+  types: Type[] = [
+    { value: true , display:'Expense'  },
+    { value: false , display:'Income'  }
+  ]
 
   constructor() { }
 
