@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EntryService } from '../entry.service';
 import { EntryElement } from '../Interfaces/EntryElement';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material';
+import { UpdateEntryComponent } from '../update-entry/update-entry.component';
 
 @Component({
   selector: 'app-entries',
@@ -13,7 +15,8 @@ export class EntriesComponent implements OnInit {
   displayedColumns: string[] = ['Description','IsExpense','Value','Actions']
   dataSource;
 
-  constructor(private service: EntryService) { }
+  constructor(private service: EntryService,
+    private dialog: MatDialog) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
@@ -24,6 +27,14 @@ export class EntriesComponent implements OnInit {
 
   updateEntry(entry){
     console.log(entry);
+    this.dialog.open(UpdateEntryComponent, {
+      data :{
+        Id: entry.Id,
+        Description: entry.Description,
+        IsExpense: entry.IsExpense,
+        Value: entry.Value
+      }
+    })
   }
 
 }
