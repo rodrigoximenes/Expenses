@@ -36,5 +36,22 @@ namespace Expenses.Core.Application.Services
                 return false;
             }
         }
+
+        public bool UpdateEntry(Entry oldEntry, Entry newEntry)
+        {
+            try
+            {
+                oldEntry.Description = newEntry.Description;
+                oldEntry.IsExpense = newEntry.IsExpense;
+                oldEntry.Value = newEntry.Value;
+
+                _entryRepository.Update(oldEntry);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

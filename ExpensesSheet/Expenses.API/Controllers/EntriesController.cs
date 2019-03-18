@@ -39,5 +39,28 @@ namespace Expenses.API.Controllers
             return BadRequest();
         }
 
+        [HttpPut]
+        public IHttpActionResult UpdateEntry(int id, [FromBody]Entry newEntry)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            if (id != newEntry.Id) return BadRequest();
+
+            try
+            {
+                Entry oldEntry = _applicationManager.EntryService.FindById(id);
+
+                if (oldEntry == null) return NotFound();
+
+                _applicationManager.EntryService.UpdateEntry(oldEntry, newEntry);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+            return Ok("Entry Updated");
+        }
     }
 }
