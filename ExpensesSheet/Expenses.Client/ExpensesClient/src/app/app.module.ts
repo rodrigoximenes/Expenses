@@ -13,11 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Material Design
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule,MatTableModule, MatInputModule, MatCardModule, MatSelectModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule,MatTableModule,
+   MatInputModule, MatCardModule,
+    MatSelectModule, MatToolbarModule,
+  MatDialogModule} from '@angular/material';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 
 //Forms
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateEntryComponent } from './update-entry/update-entry.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EntriesComponent,
     HeaderComponent,
     FooterComponent,
-    NewEntryComponent
+    NewEntryComponent,
+    UpdateEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     MatSelectModule,
     MatToolbarModule,
+    MatDialogModule,
 
     //Forms
     ReactiveFormsModule,
@@ -46,6 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRouterModule
 
   ],
+  entryComponents:[UpdateEntryComponent],
   providers: [EntryService],
   bootstrap: [AppComponent]
 })

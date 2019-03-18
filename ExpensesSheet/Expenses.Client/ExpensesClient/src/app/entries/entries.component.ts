@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class EntriesComponent implements OnInit {
 
-  displayedColumns: string[] = ['Description','IsExpense','Value']
+  displayedColumns: string[] = ['Description','IsExpense','Value','Actions']
   dataSource;
 
   constructor(private service: EntryService) { }
@@ -20,6 +20,10 @@ export class EntriesComponent implements OnInit {
       console.log('Result -', data);
       this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]);
     })
+  }
+
+  updateEntry(entry){
+    console.log(entry);
   }
 
 }
