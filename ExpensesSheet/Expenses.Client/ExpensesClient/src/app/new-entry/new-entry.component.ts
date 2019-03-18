@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Type } from '../Interfaces/Type';
 
 
@@ -18,8 +18,12 @@ export class NewEntryComponent {
   constructor() { }
 
   entryForm = new FormGroup({
-    description: new FormControl(''),
-    isExpense: new FormControl(''),
-    value: new FormControl('')
+    description: new FormControl('',Validators.required),
+    isExpense: new FormControl('',Validators.required),
+    value: new FormControl('',[Validators.required, Validators.pattern('\\d+\\.?\\d*')])
   })
+
+  onSubmit(){
+    console.log(this.entryForm.value);
+  }
 }
