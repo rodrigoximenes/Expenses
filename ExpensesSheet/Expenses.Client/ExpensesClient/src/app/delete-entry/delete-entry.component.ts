@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EntryService } from '../entry.service';
 
 @Component({
   selector: 'app-delete-entry',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteEntryComponent implements OnInit {
 
-  constructor() { }
+  id;
+
+  constructor(private route: ActivatedRoute,
+              private service: EntryService) { }
 
   ngOnInit() {
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.service.getEntry(this.id).subscribe((data)=>{
+      console.log(data);
+    })
   }
 
 }
