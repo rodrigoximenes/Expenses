@@ -35,6 +35,7 @@ export class EntriesComponent implements OnInit {
         Value: entry.Value}
     });
     dialogRef.afterClosed().subscribe(()=> this.service.getAll().subscribe((data) => {
+      console.log('Result -', data);
       this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[])}));
   }
 }

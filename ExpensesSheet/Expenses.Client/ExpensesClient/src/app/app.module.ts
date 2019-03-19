@@ -16,7 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule,MatTableModule,
    MatInputModule, MatCardModule,
     MatSelectModule, MatToolbarModule,
-  MatDialogModule} from '@angular/material';
+  MatDialogModule, MatListModule} from '@angular/material';
 import { NewEntryComponent } from './new-entry/new-entry.component';
 
 //Forms
@@ -47,6 +47,7 @@ import { DeleteEntryComponent } from './delete-entry/delete-entry.component';
     MatSelectModule,
     MatToolbarModule,
     MatDialogModule,
+    MatListModule,
 
     //Forms
     ReactiveFormsModule,
