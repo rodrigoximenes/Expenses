@@ -29,6 +29,22 @@ namespace Expenses.API.Controllers
 
         }
 
+        [HttpGet]
+        public IHttpActionResult GetEntry(int id)
+        {
+            try
+            {
+                Entry entry = _applicationManager.EntryService.FindById(id);
+                if (entry == null) return NotFound();
+                return Ok(entry);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
+
         [HttpPost]
         public IHttpActionResult PostEntry([FromBody]Entry entry)
         {
