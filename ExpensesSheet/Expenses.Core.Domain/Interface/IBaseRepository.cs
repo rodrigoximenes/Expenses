@@ -8,6 +8,8 @@ namespace Expenses.Core.Domain.Interface
 
         void Delete(int id);
 
+        void Delete(TEntity entity);
+
         void Update(TEntity entity);
 
         TEntity Find(int id);

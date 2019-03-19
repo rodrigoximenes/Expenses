@@ -49,7 +49,7 @@ namespace Expenses.API.Areas.HelpPage
             // constructors) or for which you prefer to use non-default property values. Line below provides a fallback
             // since automatic handling will fail and GeneratePageResult handles only a single type.
 #if Handle_PageResultOfT
-            config.GetHelpPageSampleGenerator().SampleObjectFactories.Add(GeneratePageResult);
+            config.GetHelpPageSampleGenerator().SampleObjectFactories.AddEntry(GeneratePageResult);
 #endif
 
             // Extend the following to use a preset object directly as the sample for all actions that support a media

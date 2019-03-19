@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Expenses.Core.Application.Services.Interface;
-using Expenses.Core.Domain.Model;
+﻿using Expenses.Core.Application.Services.Interface;
 using Expenses.Core.Domain.Interface;
+using Expenses.Core.Domain.Model;
 using Expenses.Infrastructure.DependencyInjection;
+using System;
+using System.Collections.Generic;
 
 namespace Expenses.Core.Application.Services
 {
@@ -24,7 +24,7 @@ namespace Expenses.Core.Application.Services
             return _entryRepository.FindAll();
         }
 
-        public bool Add(Entry entry)
+        public bool AddEntry(Entry entry)
         {
             try
             {
@@ -46,6 +46,19 @@ namespace Expenses.Core.Application.Services
                 oldEntry.Value = newEntry.Value;
 
                 _entryRepository.Update(oldEntry);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool RemoveEntry(Entry entry)
+        {
+            try
+            {
+                _entryRepository.Delete(entry);
                 return true;
             }
             catch (Exception ex)

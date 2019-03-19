@@ -34,7 +34,7 @@ namespace Expenses.API.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            if (_applicationManager.EntryService.Add(entry)) return Ok("Entry was created");
+            if (_applicationManager.EntryService.AddEntry(entry)) return Ok("Entry was created");
 
             return BadRequest();
         }
@@ -43,24 +43,39 @@ namespace Expenses.API.Controllers
         public IHttpActionResult UpdateEntry(int id, [FromBody]Entry newEntry)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-
             if (id != newEntry.Id) return BadRequest();
 
             try
             {
                 Entry oldEntry = _applicationManager.EntryService.FindById(id);
-
                 if (oldEntry == null) return NotFound();
 
-                _applicationManager.EntryService.UpdateEntry(oldEntry, newEntry);
+                if (!_applicationManager.EntryService.UpdateEntry(oldEntry, newEntry)) return BadRequest();
+
+                return Ok("Entry Updated");
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
+        }
 
-            return Ok("Entry Updated");
+        [HttpDelete]
+        public IHttpActionResult DeleteEntry(int id)
+        {
+            try
+            {
+                var entryDeleted = _applicationManager.EntryService.FindById(id);
+                if (entryDeleted == null) return NotFound();
+
+                if (!_applicationManager.EntryService.RemoveEntry(entryDeleted)) return BadRequest();
+
+                return Ok("Entry Deleted");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

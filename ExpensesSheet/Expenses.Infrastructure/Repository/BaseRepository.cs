@@ -30,6 +30,12 @@ namespace Expenses.Infrastructure.Repository
             _context.SaveChanges();
         }
 
+        public void Delete(TEntity entity)
+        {
+            _context.Entry(entity).State = EntityState.Deleted;
+            _context.SaveChanges();
+        }
+
         public TEntity Find(int id)
         {
             try

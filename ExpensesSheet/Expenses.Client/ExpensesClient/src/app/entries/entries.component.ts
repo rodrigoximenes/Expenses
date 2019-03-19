@@ -22,7 +22,7 @@ export class EntriesComponent implements OnInit {
     this.service.getAll().subscribe((data) => {
       console.log('Result -', data);
       this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]);
-    })
+    });
   }
 
   updateEntry(entry){
@@ -32,9 +32,7 @@ export class EntriesComponent implements OnInit {
         Id: entry.Id,
         Description: entry.Description,
         IsExpense: entry.IsExpense,
-        Value: entry.Value
-      }
-    })
+        Value: entry.Value}
+    });
   }
-
 }
