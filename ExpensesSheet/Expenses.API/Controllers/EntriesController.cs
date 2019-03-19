@@ -11,7 +11,7 @@ namespace Expenses.API.Controllers
     [EnableCors("http://localhost:4200", "*", "*")]
     public class EntriesController : ApiController
     {
-        private readonly IApplicationManager _applicationManager = CompositionRoot.Resolve<IApplicationManager>();
+        private readonly IApplicationManager  _applicationManager = CompositionRoot.Resolve<IApplicationManager>();
 
         [HttpGet]
         public IHttpActionResult GetEntries()
