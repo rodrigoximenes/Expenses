@@ -27,12 +27,14 @@ export class EntriesComponent implements OnInit {
 
   updateEntry(entry){
     console.log(entry);
-    this.dialog.open(UpdateEntryComponent, {
+    let dialogRef = this.dialog.open(UpdateEntryComponent, {
       data :{
         Id: entry.Id,
         Description: entry.Description,
         IsExpense: entry.IsExpense,
         Value: entry.Value}
     });
+    dialogRef.afterClosed().subscribe(()=> this.service.getAll().subscribe((data) => {
+      this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[])}));
   }
 }
