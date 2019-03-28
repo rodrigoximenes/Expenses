@@ -75,6 +75,10 @@
     <Compile Include="Migrations\201903141609069_TabelasIniciais.Designer.cs">
       <DependentUpon>201903141609069_TabelasIniciais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903281858221_UserAdded.cs" />
+    <Compile Include="Migrations\201903281858221_UserAdded.Designer.cs">
+      <DependentUpon>201903281858221_UserAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Module\InfrastructureModule.cs" />
     <Compile Include="NinjectConfig\ExpensesKernel.cs" />
@@ -95,6 +99,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903141609069_TabelasIniciais.resx">
       <DependentUpon>201903141609069_TabelasIniciais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903281858221_UserAdded.resx">
+      <DependentUpon>201903281858221_UserAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
