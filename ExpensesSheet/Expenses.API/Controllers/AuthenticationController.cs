@@ -1,5 +1,6 @@
 ﻿using Expenses.Core.Domain.Model;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -23,6 +24,15 @@ namespace Expenses.API.Controllers
         [HttpPost]
         public IHttpActionResult Register([FromBody]User user)
         {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
             return null;
         }
 
