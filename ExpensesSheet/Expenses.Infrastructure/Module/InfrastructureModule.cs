@@ -14,6 +14,7 @@ namespace Expenses.Infrastructure.Module
 
             //Repositorio
             this.Bind<IEntryRepository>().To<EntryRepository>();
+            this.Bind<IUserRepository>().To<UserRepository>();
             this.Bind(typeof(IBaseRepository<>)).To(typeof(BaseRepository<>));
         }
     }

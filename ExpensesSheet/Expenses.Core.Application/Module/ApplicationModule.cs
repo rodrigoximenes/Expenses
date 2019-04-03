@@ -14,6 +14,7 @@ namespace Expenses.Core.Application.Module
 
             //Services
             KernelInstance.Bind<IEntryService>().To<EntryService>();
+            KernelInstance.Bind<IUserService>().To<UserService>();
         }
     }
 }

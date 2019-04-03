@@ -7,7 +7,7 @@ import { registerContentQuery } from '@angular/core/src/render3';
 })
 export class AuthService {
 
-  baseUrl: string = 'http://localhost:27123/api/auth/'
+  baseUrl: string = 'http://localhost:27123/auth/'
 
   constructor(private http: HttpClient) {}
 
