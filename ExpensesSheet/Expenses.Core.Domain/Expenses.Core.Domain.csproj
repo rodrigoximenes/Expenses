@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Interface\IBaseRepository.cs" />
     <Compile Include="Interface\IEntryRepository.cs" />
+    <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Model\Entry.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

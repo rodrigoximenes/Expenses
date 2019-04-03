@@ -10,5 +10,6 @@ namespace Expenses.Core.Application.Manager
     public class ApplicationManager : IApplicationManager
     {
         public IEntryService EntryService => CompositionRoot.Resolve<IEntryService>();
+        public IUserService UserService => CompositionRoot.Resolve<IUserService>();
     }
 }

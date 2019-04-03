@@ -5,5 +5,7 @@ namespace Expenses.Core.Application.Manager
     public interface IApplicationManager
     {
         IEntryService EntryService { get; }
+
+        IUserService UserService { get; }
     }
 }
