@@ -10,5 +10,6 @@ namespace Expenses.Core.Application.Services.Interface
     public interface IUserService
     {
         IList<User> All();
+        bool Add(User user);
     }
 }
