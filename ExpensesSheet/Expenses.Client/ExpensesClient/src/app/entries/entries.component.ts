@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { EntryService } from '../entry.service';
-import { EntryElement } from '../Interfaces/EntryElement';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material';
 import { UpdateEntryComponent } from '../update-entry/update-entry.component';
 
@@ -13,16 +11,12 @@ import { UpdateEntryComponent } from '../update-entry/update-entry.component';
 export class EntriesComponent implements OnInit {
 
   displayedColumns: string[] = ['Description','IsExpense','Value','Actions']
-  dataSource;
+  dataSource = this.service.entries$;
 
   constructor(private service: EntryService,
     private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.service.getAll().subscribe((data) => {
-      console.log('Result -', data);
-      this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[]);
-    });
   }
 
   updateEntry(entry){
@@ -34,8 +28,8 @@ export class EntriesComponent implements OnInit {
         IsExpense: entry.IsExpense,
         Value: entry.Value}
     });
-    dialogRef.afterClosed().subscribe(()=> this.service.getAll().subscribe((data) => {
-      console.log('Result -', data);
-      this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[])}));
-  }
+  //   dialogRef.afterClosed().subscribe(()=> this.service.getAll().subscribe((data) => {
+  //     console.log('Result -', data);
+  //     this.dataSource = new MatTableDataSource<EntryElement>(data as EntryElement[])}));
+   }
 }
