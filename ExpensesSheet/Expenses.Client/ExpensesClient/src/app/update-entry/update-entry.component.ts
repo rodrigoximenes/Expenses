@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Type } from '../Interfaces/Type';
 import { EntryService } from '../entry.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-entry',
@@ -45,6 +46,7 @@ export class UpdateEntryComponent implements OnInit {
     console.log("save clicked");
     this.service.updateEntry(this.id,this.form.value).subscribe((data)=>{
       console.log('Data: ',data);
+      this.service.getAll()
     })
     this.dialogRef.close();
   }
